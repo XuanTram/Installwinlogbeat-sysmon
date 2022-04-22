@@ -4,7 +4,7 @@ Author: DMH
 Date: 30/03/2022
 #>
 if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" `"$args`"" -Verb RunAs; exit } #mo powershell duoi quyen admin
-Move-Item -Path "C:\Users\huyendm\Desktop\winlogbeat" -Destination "C:\Program Files" -force #di chuyen file winlogbeat den folder program file
+Move-Item -Path "C:\Users\Administrator\Desktop\winlogbeat" -Destination "C:\Program Files" -force #di chuyen file winlogbeat den folder program file
 Set-Location -Path 'C:\Program Files\winlogbeat'
 
 Write-Host "Installing Winlogbeat..."
